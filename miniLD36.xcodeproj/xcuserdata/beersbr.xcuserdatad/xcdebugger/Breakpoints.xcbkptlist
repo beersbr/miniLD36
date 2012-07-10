@@ -8,12 +8,36 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "miniLD36/input.hpp"
-         timestampString = "363588673.239506"
+         timestampString = "363654266.240275"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
          landmarkName = "class Input"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "miniLD36/input.cpp"
+         timestampString = "363654288.622272"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "46"
+         endingLineNumber = "46">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "miniLD36/scene.hpp"
+         timestampString = "363655000.208545"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "class Scene"
          landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
