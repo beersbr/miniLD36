@@ -32,3 +32,7 @@ int Entity::Update(){
     this->by = this->y - this->h/2;
     return 0;
 }
+
+int Entity::Type(){
+    return 0;
+}

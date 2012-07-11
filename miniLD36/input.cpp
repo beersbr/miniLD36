@@ -31,6 +31,8 @@ int Input::UpdateEvents(sf::Event &e){
             break;
             
         case sf::Event::MouseButtonReleased:
+            this->mouse_click->x = e.mouseButton.x;
+            this->mouse_click->y = e.mouseButton.y;
             break;
             
         case sf::Event::MouseMoved:

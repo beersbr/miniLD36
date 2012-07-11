@@ -12,6 +12,8 @@ public:
     virtual int Draw(sf::RenderWindow *);
     virtual int Update();
     
+    virtual int Type();
+    
 protected:
     float x, y, z; // the actual points
     float ax, ay, az; // acceleration

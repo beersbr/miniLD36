@@ -49,9 +49,8 @@ int Player::Update(Input *i, World* w){
     
     sf::Vector2i *tvec = NULL;
     
-    if((tvec = i->Clicked())){
-        
-//        Entities.push_back(new Projectile(this->x, this->y));
+    if((tvec = i->Clicked()) != NULL){
+        w->entities.push_back(new Projectile(this->x, this->y));
     }
     
     this->x += this->ax *= this->friction;

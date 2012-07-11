@@ -38,18 +38,20 @@ int main (int argc, const char * argv[])
         }
         
         std::vector<Entity* >::iterator it;
-        
-//        for(it = Entities.begin(); it != Entities.end(); it++){
-//            (*it)->Update();
-//        }
             
         p->Update(input, world);
         
+        std::cout << world->entities.size() << std::endl;
+        
+        for(it = world->entities.begin(); it != world->entities.end(); it++){
+            ((Projectile*)(*it))->Update();
+        }
+        
         window.clear();
         
-//        for(it = Entities.begin(); it != Entities.end(); it++){
-//            (*it)->Draw(&window);
-//        }
+        for(it = world->entities.begin(); it != world->entities.end(); it++){
+            ((Projectile*)(*it))->Draw(&window);
+        }
         
         p->Draw(&window);
         

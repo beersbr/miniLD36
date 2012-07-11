@@ -6,6 +6,8 @@
 #include "projectile.hpp"
 #include <SFML/Graphics.hpp>
 
+#include <iostream>
+
 extern std::vector<Entity*> Entities;
 
 class Player : public Entity{
