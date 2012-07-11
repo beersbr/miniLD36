@@ -28,5 +28,7 @@ int Entity::Draw(sf::RenderWindow *rt){
 }
 
 int Entity::Update(){
-    return 1;
+    this->bx = this->x - this->w/2;
+    this->by = this->y - this->h/2;
+    return 0;
 }

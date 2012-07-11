@@ -21,7 +21,9 @@ int main (int argc, const char * argv[])
     window.setVerticalSyncEnabled(true);
     
     sf::Event event;
-    Input* input = Input::instance();
+    Input* input = Input::Instance();
+
+    World* world = World::Instance();
     
     Player* p = new Player();
 
@@ -35,9 +37,19 @@ int main (int argc, const char * argv[])
             Game::IsPlaying = false;
         }
         
-        p->Update(input);
+        std::vector<Entity* >::iterator it;
+        
+//        for(it = Entities.begin(); it != Entities.end(); it++){
+//            (*it)->Update();
+//        }
+            
+        p->Update(input, world);
         
         window.clear();
+        
+//        for(it = Entities.begin(); it != Entities.end(); it++){
+//            (*it)->Draw(&window);
+//        }
         
         p->Draw(&window);
         

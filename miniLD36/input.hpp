@@ -19,13 +19,14 @@ struct MousePos{
 
 class Input{
 public:
-    static Input* instance();
+    static Input* Instance();
     int UpdateEvents(sf::Event &e);
     
     int KeyPressed(sf::Keyboard::Key k);
     int KeyDown(sf::Keyboard::Key k);
     
     bool MouseClickedAt(sf::Rect<int>);
+    sf::Vector2i* Clicked();
     
 private:
     Input();
@@ -35,7 +36,7 @@ private:
     std::map<sf::Keyboard::Key, int> keysPressed;
     MousePos _mouse_position;
     std::vector<sf::Event> events;
-    sf::Vector2i mouse_click;
+    sf::Vector2i* mouse_click;
 };
 
 #endif

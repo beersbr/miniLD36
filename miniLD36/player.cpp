@@ -3,18 +3,24 @@
 Player::Player() : Entity(){
     this->friction = 0.88;
     this->speed = 0.7f;
+    this->w = 50;
+    this->h = 50;
+    this->projectile_color = sf::Color::White;
 }
 
 Player::Player(Player &p) : Entity(p){
     this->friction = 0.88;
     this->speed = 0.7f;
+    this->w = 50;
+    this->h = 50;
+    this->projectile_color = sf::Color::White;
 }
 
 int Player::Draw(sf::RenderWindow *rt){
     sf::RectangleShape *s = new sf::RectangleShape();
-    s->setFillColor(sf::Color(255, 255, 255));
-    s->setPosition(this->x, this->y);
-    s->setSize(sf::Vector2<float>(50, 50));
+    s->setFillColor(projectile_color);
+    s->setPosition(this->bx, this->by);
+    s->setSize(sf::Vector2<float>(this->w, this->h));
     
     rt->draw(*s);
     
@@ -23,7 +29,7 @@ int Player::Draw(sf::RenderWindow *rt){
     return 0;
 }
 
-int Player::Update(Input *i){
+int Player::Update(Input *i, World* w){
     
     if(i->KeyDown(sf::Keyboard::W)){
         this->ay -= this->speed;
@@ -41,8 +47,17 @@ int Player::Update(Input *i){
         this->ax += this->speed;
     }
     
+    sf::Vector2i *tvec = NULL;
+    
+    if((tvec = i->Clicked())){
+        
+//        Entities.push_back(new Projectile(this->x, this->y));
+    }
+    
     this->x += this->ax *= this->friction;
     this->y += this->ay *= this->friction;
+    
+    Entity::Update();
     
     return 0;
 }

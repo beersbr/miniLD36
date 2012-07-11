@@ -1,17 +1,21 @@
 #include "input.hpp"
 
 Input::Input(){
-    
+    mouse_click = new sf::Vector2i(-1, -1);
 }
 
 Input* Input::_instance = NULL;
 
-Input* Input::instance(){
+Input* Input::Instance(){
     if(!Input::_instance) Input::_instance = new Input();
     return Input::_instance;
 }
 
 int Input::UpdateEvents(sf::Event &e){
+    // clear existing events
+    mouse_click->x = -1;
+    mouse_click->y = -1;
+    
     switch(e.type){
         case sf::Event::KeyPressed:
             this->keys[e.key.code] = 1;
@@ -45,6 +49,11 @@ int Input::KeyDown(sf::Keyboard::Key k){
 }
 
 bool Input::MouseClickedAt(sf::Rect<int> r){
-    if(r.contains(this->mouse_click)) return true;
+    if(r.contains(*(this->mouse_click))) return true;
     return false;
+}
+
+sf::Vector2i* Input::Clicked(){
+    if(mouse_click->x < 0) return NULL;
+    return mouse_click;
 }

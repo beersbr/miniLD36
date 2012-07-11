@@ -25,6 +25,8 @@
 		7ED46ACB15ABEDA0009C8DD0 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED46ACA15ABEDA0009C8DD0 /* player.cpp */; };
 		7ED46ACD15ABF449009C8DD0 /* enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED46ACC15ABF449009C8DD0 /* enemy.cpp */; };
 		7ED46AD415ACECFB009C8DD0 /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED46AD315ACECFB009C8DD0 /* scene.cpp */; };
+		7ED46AD715AD44B2009C8DD0 /* projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED46AD615AD44B2009C8DD0 /* projectile.cpp */; };
+		7ED46ADA15ADEDCF009C8DD0 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED46AD915ADEDCF009C8DD0 /* world.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,10 @@
 		7ED46ACE15ABF45D009C8DD0 /* enemy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enemy.hpp; sourceTree = "<group>"; };
 		7ED46AD215ACECF0009C8DD0 /* scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scene.hpp; sourceTree = "<group>"; };
 		7ED46AD315ACECFB009C8DD0 /* scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
+		7ED46AD515AD44A9009C8DD0 /* projectile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = projectile.hpp; sourceTree = "<group>"; };
+		7ED46AD615AD44B2009C8DD0 /* projectile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = projectile.cpp; sourceTree = "<group>"; };
+		7ED46AD815ADEDC5009C8DD0 /* world.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = world.hpp; sourceTree = "<group>"; };
+		7ED46AD915ADEDCF009C8DD0 /* world.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,10 @@
 				7ED46ACE15ABF45D009C8DD0 /* enemy.hpp */,
 				7ED46AD215ACECF0009C8DD0 /* scene.hpp */,
 				7ED46AD315ACECFB009C8DD0 /* scene.cpp */,
+				7ED46AD515AD44A9009C8DD0 /* projectile.hpp */,
+				7ED46AD615AD44B2009C8DD0 /* projectile.cpp */,
+				7ED46AD815ADEDC5009C8DD0 /* world.hpp */,
+				7ED46AD915ADEDCF009C8DD0 /* world.cpp */,
 			);
 			path = miniLD36;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 				7ED46ACB15ABEDA0009C8DD0 /* player.cpp in Sources */,
 				7ED46ACD15ABF449009C8DD0 /* enemy.cpp in Sources */,
 				7ED46AD415ACECFB009C8DD0 /* scene.cpp in Sources */,
+				7ED46AD715AD44B2009C8DD0 /* projectile.cpp in Sources */,
+				7ED46ADA15ADEDCF009C8DD0 /* world.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
