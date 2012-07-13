@@ -5,6 +5,7 @@ Entity::Entity(){
     ax = ay = az = 0.0f;
     w = h = 0.0f;
     bx = by = 0.0f;
+    _type = NONE;
 }
 
 Entity::Entity(Entity &entity){
@@ -34,5 +35,5 @@ int Entity::Update(){
 }
 
 int Entity::Type(){
-    return 0;
+    return this->_type;
 }

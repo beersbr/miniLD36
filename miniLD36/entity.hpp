@@ -4,6 +4,8 @@
 #include "input.hpp"
 #include <SFML/Graphics.hpp>
 
+enum TYPE{NONE,MONSTER, PLAYER, PROJECTILE};
+
 class Entity{
 public:
     Entity();
@@ -19,6 +21,7 @@ protected:
     float ax, ay, az; // acceleration
     float w, h; // width and height
     float bx, by; // box x and y, basically top and left.
+    TYPE _type;
 };
 
 #endif

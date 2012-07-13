@@ -6,6 +6,7 @@ Player::Player() : Entity(){
     this->w = 50;
     this->h = 50;
     this->projectile_color = sf::Color::White;
+    this->_type = PLAYER;
 }
 
 Player::Player(Player &p) : Entity(p){
@@ -50,7 +51,17 @@ int Player::Update(Input *i, World* w){
     sf::Vector2i *tvec = NULL;
     
     if((tvec = i->Clicked()) != NULL){
-        w->entities.push_back(new Projectile(this->x, this->y));
+        float width = tvec->x - this->x;
+        float height = tvec->y - this->y;
+        float distance = sqrt(pow(width, 2) + pow(height, 2));
+        
+        float ax = (width/distance)*8;
+        float ay = (height/distance)*8;
+        
+        ax += this->ax/2;
+        ay += this->ay/2;
+        
+        w->entities.push_back(new Projectile(this->x, this->y, ax, ay));
     }
     
     this->x += this->ax *= this->friction;

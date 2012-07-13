@@ -28,6 +28,7 @@ int main (int argc, const char * argv[])
     Player* p = new Player();
 
     while(Game::IsPlaying){
+        input->ResetEvents();
         while(window.pollEvent(event)){
             input->UpdateEvents(event);
         }
@@ -39,20 +40,19 @@ int main (int argc, const char * argv[])
         
         std::vector<Entity* >::iterator it;
             
+        world->Update();
+        
         p->Update(input, world);
+
         
-        std::cout << world->entities.size() << std::endl;
-        
-        for(it = world->entities.begin(); it != world->entities.end(); it++){
-            ((Projectile*)(*it))->Update();
-        }
+//        
+//        for(it = world->entities.begin(); it != world->entities.end(); it++){
+//            ((Projectile*)(*it))->Update();
+//        }
         
         window.clear();
-        
-        for(it = world->entities.begin(); it != world->entities.end(); it++){
-            ((Projectile*)(*it))->Draw(&window);
-        }
-        
+
+        world->Draw(&window);
         p->Draw(&window);
         
         window.display();

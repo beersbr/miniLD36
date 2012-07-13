@@ -21,6 +21,7 @@ class Input{
 public:
     static Input* Instance();
     int UpdateEvents(sf::Event &e);
+    int ResetEvents();
     
     int KeyPressed(sf::Keyboard::Key k);
     int KeyDown(sf::Keyboard::Key k);

@@ -1,7 +1,7 @@
 #include "enemy.hpp"
 
 Enemy::Enemy()  : Entity(){
-    
+    this->_type = MONSTER;
 }
 
 Enemy::Enemy(Enemy &e) : Entity(e){

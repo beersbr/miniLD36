@@ -1,22 +1,24 @@
 #include "projectile.hpp"
 
 Projectile::Projectile() : Entity(){
-    
+    this->_type = PROJECTILE;
 }
 
 Projectile::Projectile(Projectile &p) : Entity(p){
-    
+    this->_type = PROJECTILE;
 }
 
 Projectile::Projectile(float x, float y, sf::Color c) : Entity(){
     this->x = x; this->y = y;
     this->color = c;
+    this->_type = PROJECTILE;
 }
 
 Projectile::Projectile(float x, float y, float ax, float ay, sf::Color c) : Entity(){
     this->x = x; this->y = y;
     this->ax = ax; this->ay = ay;
     this->color = c;
+    this->_type = PROJECTILE;
 }
 
 int Projectile::Draw(sf::RenderTarget* rt){
@@ -28,8 +30,6 @@ int Projectile::Draw(sf::RenderTarget* rt){
     r->setFillColor(sf::Color(255, 255, 255));
     
     rt->draw(*r);
-    
-    std::cout << "Drawn!" << std::endl;
     
     delete r;
     

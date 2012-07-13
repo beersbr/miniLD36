@@ -13,8 +13,6 @@ Input* Input::Instance(){
 
 int Input::UpdateEvents(sf::Event &e){
     // clear existing events
-    mouse_click->x = -1;
-    mouse_click->y = -1;
     
     switch(e.type){
         case sf::Event::KeyPressed:
@@ -42,6 +40,12 @@ int Input::UpdateEvents(sf::Event &e){
             break;
     }
 
+    return 0;
+}
+
+int Input::ResetEvents(){
+    this->mouse_click->x = -1;
+    this->mouse_click->y = -1;
     return 0;
 }
 

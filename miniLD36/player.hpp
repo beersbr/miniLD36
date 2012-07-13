@@ -6,6 +6,7 @@
 #include "projectile.hpp"
 #include <SFML/Graphics.hpp>
 
+#include <cmath>
 #include <iostream>
 
 extern std::vector<Entity*> Entities;
