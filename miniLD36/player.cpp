@@ -5,7 +5,7 @@ Player::Player() : Entity(){
     this->speed = 0.7f;
     this->w = 50;
     this->h = 50;
-    this->projectile_color = sf::Color::White;
+    this->projectile_color = sf::Color(205, 205, 205);
     this->_type = PLAYER;
 }
 
@@ -14,7 +14,7 @@ Player::Player(Player &p) : Entity(p){
     this->speed = 0.7f;
     this->w = 50;
     this->h = 50;
-    this->projectile_color = sf::Color::White;
+    this->projectile_color = sf::Color(205, 205, 205);
 }
 
 int Player::Draw(sf::RenderWindow *rt){

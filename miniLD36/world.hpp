@@ -24,6 +24,11 @@ private:
     World();
     static World* _instance;
     std::vector<Entity*>::iterator _entity_it;
+    
+    sf::Clock clock;
+    sf::Time time;
+    
+    int enemy_count;
 };
 
 #endif

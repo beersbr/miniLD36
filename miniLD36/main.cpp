@@ -25,6 +25,8 @@ int main (int argc, const char * argv[])
 
     World* world = World::Instance();
     
+    world->entities.push_back(new Enemy());
+    
     Player* p = new Player();
 
     while(Game::IsPlaying){
@@ -37,24 +39,13 @@ int main (int argc, const char * argv[])
             window.close();
             Game::IsPlaying = false;
         }
-        
-        std::vector<Entity* >::iterator it;
-            
+
+        p->Update(input, world);
         world->Update();
         
-        p->Update(input, world);
-
-        
-//        
-//        for(it = world->entities.begin(); it != world->entities.end(); it++){
-//            ((Projectile*)(*it))->Update();
-//        }
-        
         window.clear();
-
         world->Draw(&window);
         p->Draw(&window);
-        
         window.display();
     }
 

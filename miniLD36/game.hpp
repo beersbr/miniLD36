@@ -2,6 +2,9 @@
 #define miniLD36_game_hpp
 
 #include "entity.hpp"
+
+#include <SFML/Graphics.hpp>
+
 #include <vector>
 #include <algorithm>
 

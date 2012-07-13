@@ -10,15 +10,19 @@ Projectile::Projectile(Projectile &p) : Entity(p){
 
 Projectile::Projectile(float x, float y, sf::Color c) : Entity(){
     this->x = x; this->y = y;
+    this->w = this->h = 10;
     this->color = c;
     this->_type = PROJECTILE;
+    Entity::Update();
 }
 
 Projectile::Projectile(float x, float y, float ax, float ay, sf::Color c) : Entity(){
     this->x = x; this->y = y;
+    this->w = this->h = 10;
     this->ax = ax; this->ay = ay;
     this->color = c;
     this->_type = PROJECTILE;
+    Entity::Update();
 }
 
 int Projectile::Draw(sf::RenderTarget* rt){

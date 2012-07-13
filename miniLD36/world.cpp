@@ -3,7 +3,7 @@
 World* World::_instance = NULL;
 
 World::World(){
-    
+    this->enemy_count = 1;
 }
 
 World* World::Instance(){
@@ -12,12 +12,21 @@ World* World::Instance(){
 }
 
 int World::Update(){
+    time = clock.getElapsedTime();
+    srand(time.asMilliseconds());
+    
+    if(rand()%1000 < 10){
+        if(this->enemy_count < 6){
+            this->entities.push_back(new Enemy());
+            this->enemy_count += 1;
+        }
+    }
+    
     for(this->_entity_it = this->entities.begin(); this->_entity_it != this->entities.end(); this->_entity_it++){
         
         assert(((*_entity_it)->Type()) != NONE);
         
         switch((*this->_entity_it)->Type()){
-                
             case MONSTER:
                 ((Enemy*)(*this->_entity_it))->Update();
                 break;
@@ -37,7 +46,6 @@ int World::Draw(sf::RenderTarget *rt){
         assert(((*_entity_it)->Type()) != NONE);
         
         switch((*this->_entity_it)->Type()){
-                
             case MONSTER:
                 ((Enemy*)(*this->_entity_it))->Draw((sf::RenderWindow*)rt);
                 break;
